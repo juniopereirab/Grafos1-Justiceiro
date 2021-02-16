@@ -1,12 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
-import { WorldMap } from "react-svg-worldmap";
-import countries from "./Graph/countries";
+import family from './Graph/family';
 
 function App() {
+
+
   return (
     <div className="App">
-      <WorldMap color="green" size="xxl" data={countries} />
+      {family.map((person) => (
+        <div className="pessoa">
+        <div className="infoPessoa">
+          <h1>{person.nome}</h1>
+        </div>
+      </div>
+      ))}
     </div>
   );
 }

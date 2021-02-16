@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.pessoa {
+  display: block;
+  width: 200px;
+  height: 200px;
+  background: #61dafb;
+  border-radius: 50%;
+}
+
+.pessoa .infoPessoa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
