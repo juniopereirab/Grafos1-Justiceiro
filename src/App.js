@@ -6,39 +6,41 @@ import createGraph from './Graph/Tree';
 function App() {
 
   const [graph, setGraph] = useState({});
+  const [familyObj, setFamilyObj] = useState(family);
+  const [person, setPerson] = useState();
 
   useEffect(() => {
     const grafo = createGraph(family);
     setGraph(grafo);
+    setFamilyObj(family);
   }, [])
-  
-  const killFamily = (person) => {
+ 
+  const killFamily = async () => {
     graph.BFS(person, (currentValue) => {
       if(family[currentValue].murderer){
         family[currentValue].alive = false;
-        console.log(family[currentValue]);
-        console.log("assassino");
+        setFamilyObj(family);
         return true;
       }
       else{
         family[currentValue].alive = false;
-        console.log(family[currentValue]);
-        console.log("inocente");
+        setFamilyObj(family);
         return false;
       }  
-    })
+    });
+
   }
 
   return (
     <div className="App">
-      {Object.keys(family).map((person, index) => (
-      <div className="pessoa" key={index}>
-        <div className="infoPessoa" onClick={()=>killFamily(person)}>
-          <h1>{family[person].name}</h1>
+      <button onClick={() => killFamily()}>Matar</button>
+      {Object.keys(familyObj).map((person, index) => (
+      <div className="pessoaViva" key={index}>
+        <div className="infoPessoa" onClick={() => setPerson(person)}>
+          <h1>{familyObj[person].name}</h1>
         </div>
       </div>
       ))}
-      <button onClick={(e) => createGraph(e)}>Criar grafo</button>
     </div>
   );
 }
