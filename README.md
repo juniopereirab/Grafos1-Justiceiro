@@ -6,7 +6,7 @@
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 15/0120371  |  Bruno Oliveira Dantas |
 | 17/0031438  |  Dâmaso Júnio Pereira Brasileo |
 
 ## Sobre 
