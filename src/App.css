@@ -4,9 +4,15 @@
   flex-wrap: wrap ;
   flex-direction: column;
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   align-items: center;
   justify-content: center;
+}
+
+.App > h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 2vw;
 }
 
 
@@ -28,6 +34,7 @@
 .family {
   display: flex;
   flex-wrap: wrap;
+  margin: 0;
 }
 
 .pessoaViva {
@@ -46,9 +53,10 @@
   box-shadow: 1px 1px 10px #296e35,
               2px 2px 10px #296e35,
               3px 3px 10px #296e35;
-  -webkit-transform: translate(-3px);
-  transform: translate(-3px);
   transition-duration: .5s;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .infoPessoa {
@@ -78,10 +86,13 @@
   border-radius: 7px;
 }
 
-#resetButton:hover
+#resetButton:hover,
 #resetButton:active{
-  background: #8a8a60;
-  transition-duration: .5s;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  opacity: 0.8;
+  transition-duration: .4s;
 }
 
 #spaceButton {
@@ -93,11 +104,13 @@
 .titles {
   display: flex;
   align-items: center;
+  margin-bottom: 0;
+  padding: 0;
 }
 
 .titles p {
   width: 50%;
-  padding: 50px;
+  padding: 0 50px;
   text-align: justify;
   font-weight: bold;
   color: #505050;
