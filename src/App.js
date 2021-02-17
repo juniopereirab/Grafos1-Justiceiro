@@ -9,15 +9,6 @@ function App() {
   const [familyObj, setFamilyObj] = useState(family);
   const [status, setStatus] = useState(0);
 
-  Object.size = function(obj) {
-    var size = 0,
-      key;
-    for (key in obj) {
-      if (obj.hasOwnProperty(key)) size++;
-    }
-    return size;
-  };
-
   useEffect(() => {
     const grafo = createGraph(family);
     setGraph(grafo);
@@ -25,14 +16,6 @@ function App() {
     console.log(family);
   }, [])
 
-  // const timeout = (delay) => {
-  //   handler = new Promise(res=> setTimeout(res, delay));
-  //   return handler;
-  // }
-
-  // const clearTime = () => {
-  //   return () => handler && clearTimeout(handler);
-  // }
   const killFamily = (e ,person) => {
     graph.BFS(person, (currentValue) => {
       if(family[currentValue].murderer){
